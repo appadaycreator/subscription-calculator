@@ -16,228 +16,999 @@
     <!-- End Google Tag Manager -->
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKnSURBVFhH7ZZNaxNBGIafBBu0RbEq9eBFD548ePCgJ1s9ePHgQQ8e9OBBvXjQg54E9eDFgydPnjx4suLJkydPnjx48uTJk6dOnjx58uTJk6c+/QMyb2YzmW2SJmnBBx5mdmdndp7Zd2Y2CYLgPxAEQRAEQRAEQRAEQRAEQfwPRqORAq7rqkajkUokEkqhUFA6nQ5CodAzjuO+xWIxpVKpKJVKRalUKkqlUlEqlYpSqVSUSqWiVCoVpVKpKJVKRalUKkqlUlEqlYpSqVRUu92O6/U6VavVVKVSUeVyWZXL5SS/T09PLxeLxc9er5e+7OzsnOz3+93t7e3fW1tbvzY3N39tb2//3tnZ+b21tfVrd3f39/7+/m/f93/7vv/b8/3fru//8jz/l+f5vzw/+OV5wU/PC356fvDT84OfnhfMet5g1vOCGc8PZjw/mPa8YMrzg0nPC8Y9L3jjusFr1w3GXDcYc93glesGI64bjLhO8NJ1gxeuE7xwHeGF6wgvHEd47jjCc8cRnjuO8MxxhKe2Izx1HeGJ4whPbEd4bDvCY9sRHtmO8Mh2hEe2Izy0HeGh7QgPbEd4YDvCA9sR7tuOcN92hHu2I9yzHeGu7Qh3bUe4YzvCHdsRbtuOcNt2hFu2I9yyHeGm7Qg3bUe4YTvCDdsRrtuOcN12hGu2I1yzHeGq7QhXbUe4YjvCFdsRLtuOcNl2hEu2I1yyHeGi7QgXbUe4YDvCBdsRztuOcN52hHO2I5yzHeGs7QhnbUc4YzvCGdsRTtuOcNp2hFO2I5yyHeGk7QgnbUc4YTvCCdsRjtuOcNx2hGO2Ixy1HeGI7QhHbEc4bDvCYdsRDtmOcNB2hIO2IxywHeGA7Qj7bUfYbzvCPtsR9tmOsNd2hL22I+y1HWGv7Qh7bUfYYzvCHtsRdtuOsNt2hF22I+yyHWGn7Qg7bUfYYTvCDtsRttuOsN12hG22I2yzHWGr7QhbbUfYYjvCFtsRNtuOsNl2hE22I2yyHWGj7QgbbUfYYDvCBtsR1tuOsN52hHW2I6yzHWGt7QhrbUdYYzvCGtsRVtuOsNp2hFW2I6yyHWGl7QgrbUdYYTvCctsRltuOsMx2hKW2Iyy1HWGx7QiLbUdYZDvCItsRFtqOsNB2hAW2IyywHWG+7QjzbUeYZzvCPNsR5tqOsMA0TdM0TdM0TdM0TdM0TdM0TdPstf8C/a7sXgAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKnSURBVFhH7ZZNaxNBGIafBBu0RbEq9eBFD548ePCgJ1s9ePHgQQ8e9OBBvXjQg54E9eDFgydPnjx4suLJkydPnjx48uTJk6c+/QMyb2YzmW2SJmnBBx5mdmdndp7Zd2Y2CYLgPxAEQRAEQRAEQRAEQRAEQfwPRqORAq7rqkajkUokEkqhUFA6nQ5CodAzjuO+xWIxpVKpKJVKRalUKkqlUlEqlYpSqVSUSqWiVCoVpVKpKJVKRalUKkqlUlEqlYpSqVRUu92O6/U6VavVVKVSUeVyWZXL5SS/T09PLxeLxc9er5e+7OzsnOz3+93t7e3fW1tbvzY3N39tb2//3tnZ+b21tfVrd3f39/7+/m/f93/7vv/b8/3fru//8jz/l+f5vzw/+OV5wU/PC356fvDT84OfnhfMet5g1vOCGc8PZjw/mPa8YMrzg0nPC8Y9L3jjusFr1w3GXDcYc93glesGI64bjLhO8NJ1gxeuE7xwHeGF6wgvHEd47jjCc8cRnjuO8MxxhKe2Izx1HeGJ4whPbEd4bDvCY9sRHtmO8Mh2hEe2Izy0HeGh7QgPbEd4YDvCA9sR7tuOcN92hHu2I9yzHeGu7Qh3bUe4YzvCHdsRbtuOcNt2hFu2I9yyHeGm7Qg3bUe4YTvCDdsRrtuOcN12hGu2I1yzHeGq7QhXbUe4YjvCFdsRLtuOcNl2hEu2I1yyHeGi7QgXbUe4YDvCBdsRztuOcN52hHO2I5yzHeGs7QhnbUc4YzvCGdsRTtuOcNp2hFO2I5yyHeGk7QgnbUc4YTvCCdsRjtuOcNx2hGO2Ixy1HeGI7QhHbEc4bDvCYdsRDtmOcNB2hIO2IxywHeGA7Qj7bUfYbzvCPtsR9tmOsNd2hL22I+y1HWGv7Qh7bUfYYzvCHtsRdtuOsNt2hF22I+yyHWGn7Qg7bUfYYTvCDtsRttuOsN12hG22I2yzHWGr7QhbbUfYYjvCFtsRNtuOsNl2hE22I2yyHWGj7QgbbUfYYDvCBtsR1tuOsN52hHW2I6yzHWGt7QhrbUdYYzvCGtsRVtuOsNp2hFW2I6yyHWGl7QgrbUdYYTvCctsRltuOsMx2hKW2Iyy1HWGx7QiLbUdYZDvCItsRFtqOsNB2hAW2IyywHWG+7QjzbUeYZzvCPNsR5tqOsMA0TdM0TdM0TdM0TdM0TdM0TdPstf8C/a7sXgAAAABJRU5ErkJggg==">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            /* Design System - Colors */
+            --primary-50: #f0f9ff;
+            --primary-100: #e0f2fe;
+            --primary-200: #bae6fd;
+            --primary-300: #7dd3fc;
+            --primary-400: #38bdf8;
+            --primary-500: #0ea5e9;
+            --primary-600: #0284c7;
+            --primary-700: #0369a1;
+            --primary-800: #075985;
+            --primary-900: #0c4a6e;
+            
+            --secondary-50: #fdf4ff;
+            --secondary-100: #fae8ff;
+            --secondary-200: #f5d0fe;
+            --secondary-300: #f0abfc;
+            --secondary-400: #e879f9;
+            --secondary-500: #d946ef;
+            --secondary-600: #c026d3;
+            --secondary-700: #a21caf;
+            --secondary-800: #86198f;
+            --secondary-900: #701a75;
+            
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --success-500: #10b981;
+            --warning-500: #f59e0b;
+            --error-500: #ef4444;
+            
+            /* Design System - Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            
+            /* Design System - Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            
+            /* Design System - Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            
+            /* Design System - Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Animation */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        [data-theme="dark"] {
+            --primary-50: #0c4a6e;
+            --primary-100: #075985;
+            --primary-500: #38bdf8;
+            --gray-50: #111827;
+            --gray-100: #1f2937;
+            --gray-200: #374151;
+            --gray-300: #4b5563;
+            --gray-400: #6b7280;
+            --gray-500: #9ca3af;
+            --gray-600: #d1d5db;
+            --gray-700: #e5e7eb;
+            --gray-800: #f3f4f6;
+            --gray-900: #f9fafb;
+        }
+        
+        /* Reset & Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--secondary-600) 100%);
             min-height: 100vh;
-            color: #333;
+            color: var(--gray-900);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         
+        /* Utility Classes */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .fade-in {
+            animation: fadeIn var(--transition-slow) ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-up {
+            animation: slideUp var(--transition-base) ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        /* Layout Components */
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 var(--space-4);
         }
         
+        .glassmorphism {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2xl), 0 0 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Header */
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: var(--space-16);
             color: white;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
         }
         
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.8) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
         }
         
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .header .subtitle {
+            font-size: var(--text-xl);
+            opacity: 0.95;
+            font-weight: 500;
+            margin-bottom: var(--space-6);
         }
         
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .calc-section {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .sidebar {
+        .stats-banner {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            justify-content: center;
+            gap: var(--space-8);
+            margin-top: var(--space-8);
         }
         
-        .ad-section {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .stat-item {
             text-align: center;
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: var(--text-sm);
+            opacity: 0.8;
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: var(--space-6);
+            right: var(--space-6);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-full);
+            padding: var(--space-3);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            color: white;
+            font-size: var(--text-lg);
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: var(--space-8);
+            margin-bottom: var(--space-16);
+        }
+        
+        /* Form Components */
+        .form-section {
+            margin-bottom: var(--space-8);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+        }
+        
+        .section-icon {
+            font-size: var(--text-2xl);
+        }
+        
+        .section-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--gray-800);
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-bottom: var(--space-6);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+            transition: width var(--transition-base);
+            border-radius: var(--radius-full);
         }
         
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: var(--space-6);
+            position: relative;
         }
         
-        .input-group label {
+        .input-label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
+            margin-bottom: var(--space-2);
+            font-weight: 600;
+            color: var(--gray-700);
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .input-group input, .input-group select {
+        .input-field {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
+            padding: var(--space-4);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-base);
+            transition: all var(--transition-base);
+            background: white;
+            font-family: inherit;
         }
         
-        .input-group input:focus, .input-group select:focus {
+        .input-field:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+            transform: translateY(-1px);
         }
         
-        .subscription-form {
-            background: #f8f9ff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .input-field.error {
+            border-color: var(--error-500);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
         }
         
+        .input-error {
+            color: var(--error-500);
+            font-size: var(--text-xs);
+            margin-top: var(--space-1);
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+        
+        .input-success {
+            color: var(--success-500);
+            font-size: var(--text-xs);
+            margin-top: var(--space-1);
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+        
+        /* Buttons */
         .btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: var(--space-4) var(--space-6);
             border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            border-radius: var(--radius-lg);
+            font-size: var(--text-base);
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s;
-            width: 100%;
-            margin-bottom: 10px;
+            transition: all var(--transition-base);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+            min-height: 48px;
         }
         
-        .btn:hover {
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left var(--transition-base);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
             transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
         }
         
         .btn-secondary {
-            background: #6c757d;
+            background: linear-gradient(135deg, var(--gray-500), var(--gray-600));
+            color: white;
         }
         
         .btn-danger {
-            background: #dc3545;
+            background: linear-gradient(135deg, var(--error-500), #dc2626);
+            color: white;
         }
         
-        .results {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f8f9ff;
-            border-radius: 10px;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-500);
+            color: var(--primary-500);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-500);
+            color: white;
+        }
+        
+        .btn-full {
+            width: 100%;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Results Section */
+        .results-section {
+            margin-top: var(--space-8);
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
         }
         
         .summary-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.8));
+            backdrop-filter: blur(20px);
+            padding: var(--space-6);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
         }
         
-        .summary-amount {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+        }
+        
+        .summary-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .summary-label {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+            margin-bottom: var(--space-2);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .summary-value {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        
+        .summary-change {
+            font-size: var(--text-xs);
+            margin-top: var(--space-1);
+            font-weight: 500;
+        }
+        
+        .summary-change.positive {
+            color: var(--success-500);
+        }
+        
+        .summary-change.negative {
+            color: var(--error-500);
+        }
+        
+        /* Subscription Items */
+        .subscription-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
         }
         
         .subscription-item {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            border-left: 4px solid var(--primary-500);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .subscription-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            pointer-events: none;
+        }
+        
+        .subscription-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .subscription-item.priority-high {
+            border-left-color: var(--error-500);
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(255,255,255,0.95));
+        }
+        
+        .subscription-item.priority-medium {
+            border-left-color: var(--warning-500);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(255,255,255,0.95));
+        }
+        
+        .subscription-item.priority-low {
+            border-left-color: var(--success-500);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(255,255,255,0.95));
+        }
+        
+        .subscription-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 10px;
-            background: white;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            align-items: flex-start;
+            margin-bottom: var(--space-3);
         }
         
-        .priority-high {
-            border-left-color: #dc3545;
+        .subscription-name {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: var(--space-1);
         }
         
-        .priority-medium {
-            border-left-color: #ffc107;
+        .subscription-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
         }
         
-        .priority-low {
-            border-left-color: #28a745;
-        }
-        
-        .share-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .share-btn {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-            text-decoration: none;
+        .meta-item {
             text-align: center;
         }
         
-        .share-twitter {
-            background: #1da1f2;
+        .meta-label {
+            font-size: var(--text-xs);
+            color: var(--gray-500);
+            margin-bottom: var(--space-1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .share-line {
-            background: #00c300;
+        .meta-value {
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--gray-800);
         }
         
-        .share-facebook {
-            background: #1877f2;
+        .priority-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .history {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .priority-badge.high {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error-500);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .priority-badge.medium {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning-500);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+        
+        .priority-badge.low {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-500);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+        
+        .ad-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-6);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+        }
+        
+        .ad-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .ad-title {
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            color: var(--gray-800);
+        }
+        
+        .ad-description {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+            margin-bottom: var(--space-4);
+            line-height: 1.5;
         }
         
         .affiliate-note {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 10px;
+            font-size: var(--text-xs);
+            color: var(--gray-400);
+            margin-top: var(--space-3);
+            padding-top: var(--space-3);
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        /* Share Components */
+        .share-section {
+            margin-top: var(--space-8);
+            padding: var(--space-6);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .share-title {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            text-align: center;
+            color: var(--gray-800);
+        }
+        
+        .share-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-3);
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-4);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            transition: all var(--transition-base);
+            color: white;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .share-twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+        }
+        
+        .share-line {
+            background: linear-gradient(135deg, #00c300, #00a000);
+        }
+        
+        .share-facebook {
+            background: linear-gradient(135deg, #1877f2, #166fe5);
+        }
+        
+        /* History Section */
+        .history-section {
+            margin-top: var(--space-16);
+        }
+        
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+        
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all var(--transition-base);
+        }
+        
+        .history-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .history-date {
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+        
+        .history-data {
+            text-align: right;
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+        }
+        
+        /* Tutorial Overlay */
+        .tutorial-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-base);
+        }
+        
+        .tutorial-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .tutorial-content {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow-2xl);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform var(--transition-base);
+        }
+        
+        .tutorial-overlay.active .tutorial-content {
+            transform: scale(1);
+        }
+        
+        .tutorial-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            color: var(--gray-800);
+        }
+        
+        .tutorial-text {
+            font-size: var(--text-base);
+            color: var(--gray-600);
+            margin-bottom: var(--space-6);
+            line-height: 1.6;
+        }
+        
+        .tutorial-buttons {
+            display: flex;
+            gap: var(--space-3);
+            justify-content: center;
+        }
+        
+        /* Loading States */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+            
+            .sidebar {
+                order: -1;
+            }
         }
         
         @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
+            .container {
+                padding: 0 var(--space-3);
             }
             
             .header h1 {
-                font-size: 2rem;
+                font-size: var(--text-4xl);
+            }
+            
+            .stats-banner {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .subscription-meta {
+                grid-template-columns: 1fr 1fr;
             }
             
             .share-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .tutorial-content {
+                margin: var(--space-4);
+                padding: var(--space-6);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card {
+                padding: var(--space-4);
+            }
+            
+            .subscription-item {
+                padding: var(--space-4);
+            }
+            
+            .subscription-header {
                 flex-direction: column;
+                gap: var(--space-2);
+            }
+            
+            .subscription-meta {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus Management */
+        .btn:focus-visible,
+        .input-field:focus-visible {
+            outline: 2px solid var(--primary-500);
+            outline-offset: 2px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .theme-toggle,
+            .share-section,
+            .sidebar {
+                display: none !important;
             }
         }
     </style>
@@ -248,312 +1019,860 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="container">
-        <div class="header">
-            <h1>💰 サブスク断捨離計算機</h1>
-            <p>年間6万円の節約も可能！あなたのサブスク代を見直そう</p>
-        </div>
-        
-        <div class="main-content">
-            <div class="calc-section">
-                <h2>📱 契約中のサブスクを入力</h2>
-                
-                <div class="subscription-form">
-                    <div class="input-group">
-                        <label for="serviceName">サービス名</label>
-                        <input type="text" id="serviceName" placeholder="例: Netflix, Spotify">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="monthlyFee">月額料金（円）</label>
-                        <input type="number" id="monthlyFee" placeholder="例: 1,980">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="usageFreq">月の利用回数</label>
-                        <input type="number" id="usageFreq" placeholder="例: 15">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="satisfaction">満足度（1-5）</label>
-                        <select id="satisfaction">
-                            <option value="1">1 - 全く満足していない</option>
-                            <option value="2">2 - あまり満足していない</option>
-                            <option value="3" selected>3 - 普通</option>
-                            <option value="4">4 - 満足している</option>
-                            <option value="5">5 - 非常に満足している</option>
-                        </select>
-                    </div>
-                    
-                    <button class="btn" onclick="addSubscription()">サブスクを追加</button>
-                </div>
-                
-                <div id="results" class="results" style="display: none;">
-                    <div class="summary-card">
-                        <h3>📊 分析結果</h3>
-                        <div>月額合計: <span id="totalMonthly" class="summary-amount">¥0</span></div>
-                        <div>年額合計: <span id="totalYearly" class="summary-amount">¥0</span></div>
-                        <div>節約可能額: <span id="savingsPotential" class="summary-amount">¥0</span></div>
-                    </div>
-                    
-                    <div id="subscriptionList"></div>
-                    
-                    <div class="share-buttons">
-                        <a href="#" class="share-btn share-twitter" onclick="shareTwitter()">Xでシェア</a>
-                        <a href="#" class="share-btn share-line" onclick="shareLine()">LINEでシェア</a>
-                        <button class="btn btn-secondary" onclick="compareWithFriends()">友達と比較</button>
-                    </div>
-                </div>
-                
-                <button class="btn btn-danger" onclick="clearAll()" style="display: none;" id="clearBtn">全てクリア</button>
-            </div>
-            
-            <div class="sidebar">
-                <!-- A8.net アフィリエイト -->
-                <div class="ad-section">
-                    <h3>💡 おすすめ節約サービス</h3>
-                    <p><strong>マネーフォワード ME</strong></p>
-                    <p>家計簿アプリで支出を自動分析！サブスク管理も簡単に。</p>
-                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 10px;">詳細を見る</a>
-                    <div class="affiliate-note">※アフィリエイト広告</div>
-                </div>
-                
-                <!-- Amazon アソシエイト -->
-                <div class="ad-section">
-                    <h3>📚 節約本のおすすめ</h3>
-                    <p><strong>お金の大学</strong></p>
-                    <p>両学長が教える「貯める・稼ぐ・増やす・守る・使う」の実践方法</p>
-                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 10px;">Amazonで見る</a>
-                    <div class="affiliate-note">※Amazon アソシエイト</div>
-                </div>
-                
-                <!-- 楽天アフィリエイト -->
-                <div class="ad-section">
-                    <h3>🏪 楽天経済圏で節約</h3>
-                    <p><strong>楽天カード</strong></p>
-                    <p>年会費無料でポイント還元率1%！楽天市場でのお買い物がお得に。</p>
-                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 10px;">楽天で申し込み</a>
-                    <div class="affiliate-note">※楽天アフィリエイト</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="history">
-            <h3>📈 計算履歴</h3>
-            <div id="historyList">
-                <p>まだ履歴がありません。サブスクを追加して分析を開始しましょう！</p>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="テーマ切り替え">
+        <span id="themeIcon">🌙</span>
+    </button>
+
+    <!-- Tutorial Overlay -->
+    <div class="tutorial-overlay" id="tutorialOverlay">
+        <div class="tutorial-content">
+            <h2 class="tutorial-title">🎯 サブスク断捨離を始めよう</h2>
+            <p class="tutorial-text">契約中のサブスクリプションサービスを入力するだけで、解約すべきサービスと年間節約可能額を自動計算します。</p>
+            <div class="tutorial-buttons">
+                <button class="btn btn-outline" onclick="closeTutorial()">スキップ</button>
+                <button class="btn btn-primary" onclick="startTutorial()">始める</button>
             </div>
         </div>
     </div>
 
-    <script>
-        let subscriptions = [];
-        let history = JSON.parse(localStorage.getItem('subscriptionHistory') || '[]');
-        
-        function addSubscription() {
-            const serviceName = document.getElementById('serviceName').value;
-            const monthlyFee = parseFloat(document.getElementById('monthlyFee').value);
-            const usageFreq = parseInt(document.getElementById('usageFreq').value);
-            const satisfaction = parseInt(document.getElementById('satisfaction').value);
-            
-            if (!serviceName || !monthlyFee || !usageFreq) {
-                alert('全ての項目を入力してください');
-                return;
-            }
-            
-            const costPerUse = monthlyFee / usageFreq;
-            const priority = calculatePriority(monthlyFee, usageFreq, satisfaction);
-            
-            subscriptions.push({
-                serviceName,
-                monthlyFee,
-                usageFreq,
-                satisfaction,
-                costPerUse,
-                priority,
-                yearlyFee: monthlyFee * 12
-            });
-            
-            // フォームクリア
-            document.getElementById('serviceName').value = '';
-            document.getElementById('monthlyFee').value = '';
-            document.getElementById('usageFreq').value = '';
-            document.getElementById('satisfaction').value = '3';
-            
-            updateResults();
-            saveToHistory();
-        }
-        
-        function calculatePriority(monthlyFee, usageFreq, satisfaction) {
-            const costPerUse = monthlyFee / usageFreq;
-            const score = (costPerUse * 0.4) + ((6 - satisfaction) * monthlyFee * 0.3) + (monthlyFee * 0.3);
-            
-            if (score > 2000) return 'high';
-            if (score > 1000) return 'medium';
-            return 'low';
-        }
-        
-        function updateResults() {
-            const totalMonthly = subscriptions.reduce((sum, sub) => sum + sub.monthlyFee, 0);
-            const totalYearly = totalMonthly * 12;
-            
-            // 解約優先度の高いサービスの節約可能額を計算
-            const highPriorityServices = subscriptions.filter(sub => sub.priority === 'high');
-            const savingsPotential = highPriorityServices.reduce((sum, sub) => sum + sub.yearlyFee, 0);
-            
-            document.getElementById('totalMonthly').textContent = `¥${totalMonthly.toLocaleString()}`;
-            document.getElementById('totalYearly').textContent = `¥${totalYearly.toLocaleString()}`;
-            document.getElementById('savingsPotential').textContent = `¥${savingsPotential.toLocaleString()}`;
-            
-            displaySubscriptions();
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('clearBtn').style.display = 'block';
-        }
-        
-        function displaySubscriptions() {
-            const sortedSubs = [...subscriptions].sort((a, b) => {
-                const priorityOrder = { high: 3, medium: 2, low: 1 };
-                return priorityOrder[b.priority] - priorityOrder[a.priority];
-            });
-            
-            const listHTML = sortedSubs.map(sub => `
-                <div class="subscription-item priority-${sub.priority}">
-                    <div>
-                        <strong>${sub.serviceName}</strong><br>
-                        月額: ¥${sub.monthlyFee.toLocaleString()} | 
-                        利用回数: ${sub.usageFreq}回 | 
-                        1回あたり: ¥${Math.round(sub.costPerUse)}<br>
-                        <small>満足度: ${sub.satisfaction}/5 | 
-                        解約優先度: ${sub.priority === 'high' ? '高' : sub.priority === 'medium' ? '中' : '低'}</small>
-                    </div>
-                    <div>
-                        <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" 
-                                onclick="removeSubscription('${sub.serviceName}')">削除</button>
-                    </div>
+    <div class="container">
+        <!-- Header -->
+        <header class="header fade-in">
+            <h1>💰 サブスク断捨離計算機</h1>
+            <p class="subtitle">年間6万円の節約も可能！あなたのサブスク代を見直そう</p>
+            <div class="stats-banner">
+                <div class="stat-item">
+                    <span class="stat-number">¥63,420</span>
+                    <span class="stat-label">平均年間節約額</span>
                 </div>
-            `).join('');
-            
-            document.getElementById('subscriptionList').innerHTML = listHTML;
-        }
-        
-        function removeSubscription(serviceName) {
-            subscriptions = subscriptions.filter(sub => sub.serviceName !== serviceName);
-            if (subscriptions.length === 0) {
-                document.getElementById('results').style.display = 'none';
-                document.getElementById('clearBtn').style.display = 'none';
-            } else {
-                updateResults();
+                <div class="stat-item">
+                    <span class="stat-number">4.2個</span>
+                    <span class="stat-label">平均解約推奨数</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">89%</span>
+                    <span class="stat-label">ユーザー満足度</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Input Section -->
+                <section class="card fade-in">
+                    <div class="section-header">
+                        <span class="section-icon">📱</span>
+                        <h2 class="section-title">契約中のサブスクを入力</h2>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+
+                    <form id="subscriptionForm" class="form-section">
+                        <div class="input-group">
+                            <label for="serviceName" class="input-label">サービス名 *</label>
+                            <input 
+                                type="text" 
+                                id="serviceName" 
+                                class="input-field" 
+                                placeholder="例: Netflix, Spotify, Amazon Prime"
+                                aria-describedby="serviceNameHelp"
+                                required
+                            >
+                            <div id="serviceNameError" class="input-error" style="display: none;">
+                                ❌ サービス名を入力してください
+                            </div>
+                            <div id="serviceNameSuccess" class="input-success" style="display: none;">
+                                ✅ 入力完了
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="monthlyFee" class="input-label">月額料金（円）*</label>
+                            <input 
+                                type="number" 
+                                id="monthlyFee" 
+                                class="input-field" 
+                                placeholder="例: 1980"
+                                min="0"
+                                step="1"
+                                aria-describedby="monthlyFeeHelp"
+                                required
+                            >
+                            <div id="monthlyFeeError" class="input-error" style="display: none;">
+                                ❌ 正しい金額を入力してください
+                            </div>
+                            <div id="monthlyFeeSuccess" class="input-success" style="display: none;">
+                                ✅ 入力完了
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="usageFreq" class="input-label">月の利用回数 *</label>
+                            <input 
+                                type="number" 
+                                id="usageFreq" 
+                                class="input-field" 
+                                placeholder="例: 15"
+                                min="0"
+                                step="1"
+                                aria-describedby="usageFreqHelp"
+                                required
+                            >
+                            <div id="usageFreqError" class="input-error" style="display: none;">
+                                ❌ 利用回数を入力してください
+                            </div>
+                            <div id="usageFreqSuccess" class="input-success" style="display: none;">
+                                ✅ 入力完了
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="satisfaction" class="input-label">満足度</label>
+                            <select id="satisfaction" class="input-field" aria-describedby="satisfactionHelp">
+                                <option value="1">⭐ 1 - 全く満足していない</option>
+                                <option value="2">⭐⭐ 2 - あまり満足していない</option>
+                                <option value="3" selected>⭐⭐⭐ 3 - 普通</option>
+                                <option value="4">⭐⭐⭐⭐ 4 - 満足している</option>
+                                <option value="5">⭐⭐⭐⭐⭐ 5 - 非常に満足している</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" id="addBtn">
+                            <span id="addBtnText">サブスクを追加</span>
+                            <span id="addBtnLoader" class="loading-spinner" style="display: none;"></span>
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Results Section -->
+                <section class="results-section fade-in" id="resultsSection" style="display: none;">
+                    <div class="card">
+                        <div class="section-header">
+                            <span class="section-icon">📊</span>
+                            <h2 class="section-title">分析結果</h2>
+                        </div>
+
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <div class="summary-label">月額合計</div>
+                                <div class="summary-value" id="totalMonthly">¥0</div>
+                                <div class="summary-change" id="monthlyChange"></div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-label">年額合計</div>
+                                <div class="summary-value" id="totalYearly">¥0</div>
+                                <div class="summary-change" id="yearlyChange"></div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-label">節約可能額</div>
+                                <div class="summary-value" id="savingsPotential">¥0</div>
+                                <div class="summary-change positive" id="savingsChange">年間節約額</div>
+                            </div>
+                        </div>
+
+                        <div class="subscription-list" id="subscriptionList"></div>
+
+                        <div class="share-section">
+                            <h3 class="share-title">📤 結果をシェアしよう</h3>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn share-twitter" onclick="shareTwitter()" aria-label="Xでシェア">
+                                    <span>🐦</span> X
+                                </a>
+                                <a href="#" class="share-btn share-line" onclick="shareLine()" aria-label="LINEでシェア">
+                                    <span>💬</span> LINE
+                                </a>
+                                <a href="#" class="share-btn share-facebook" onclick="shareFacebook()" aria-label="Facebookでシェア">
+                                    <span>📘</span> Facebook
+                                </a>
+                                <button class="btn btn-secondary" onclick="compareWithFriends()" aria-label="友達と比較">
+                                    <span>👥</span> 友達と比較
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-danger btn-full" onclick="clearAll()" id="clearBtn" style="margin-top: var(--space-6);">
+                            🗑️ 全てクリア
+                        </button>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- A8.net アフィリエイト -->
+                <div class="ad-card fade-in">
+                    <h3 class="ad-title">💡 おすすめ家計管理アプリ</h3>
+                    <p class="ad-description">
+                        <strong>マネーフォワード ME</strong><br>
+                        2,600万人が使う家計簿アプリ。サブスク管理も自動で楽々！支出を見える化して賢く節約しよう。
+                    </p>
+                    <a href="#" class="btn btn-primary" onclick="sendAnalyticsEvent('affiliate_click', 'MoneyForward')">
+                        無料ダウンロード
+                    </a>
+                    <div class="affiliate-note">※アフィリエイト広告を含みます</div>
+                </div>
+
+                <!-- Amazon アソシエイト -->
+                <div class="ad-card fade-in">
+                    <h3 class="ad-title">📚 節約の必読書</h3>
+                    <p class="ad-description">
+                        <strong>本当の自由を手に入れる お金の大学</strong><br>
+                        両学長が教える貯める・稼ぐ・増やす・守る・使うの5つの力で人生が変わる！
+                    </p>
+                    <a href="#" class="btn btn-primary" onclick="sendAnalyticsEvent('affiliate_click', 'Amazon_Book')">
+                        Amazonで購入
+                    </a>
+                    <div class="affiliate-note">※Amazon アソシエイト</div>
+                </div>
+
+                <!-- 楽天アフィリエイト -->
+                <div class="ad-card fade-in">
+                    <h3 class="ad-title">💳 楽天経済圏で節約</h3>
+                    <p class="ad-description">
+                        <strong>楽天カード</strong><br>
+                        年会費永年無料！ポイント還元率1%で楽天市場でのお買い物がさらにお得に。
+                    </p>
+                    <a href="#" class="btn btn-primary" onclick="sendAnalyticsEvent('affiliate_click', 'Rakuten_Card')">
+                        今すぐ申し込み
+                    </a>
+                    <div class="affiliate-note">※楽天アフィリエイト</div>
+                </div>
+
+                <!-- もしもアフィリエイト -->
+                <div class="ad-card fade-in">
+                    <h3 class="ad-title">📱 格安SIMで通信費削減</h3>
+                    <p class="ad-description">
+                        <strong>楽天モバイル</strong><br>
+                        月額1,078円〜！データ使い放題で年間6万円以上の節約も可能。乗り換えキャンペーン実施中！
+                    </p>
+                    <a href="#" class="btn btn-primary" onclick="sendAnalyticsEvent('affiliate_click', 'Rakuten_Mobile')">
+                        料金プランを見る
+                    </a>
+                    <div class="affiliate-note">※もしもアフィリエイト</div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- History Section -->
+        <section class="card history-section fade-in">
+            <div class="section-header">
+                <span class="section-icon">📈</span>
+                <h2 class="section-title">計算履歴</h2>
+            </div>
+            <div class="history-list" id="historyList">
+                <p style="text-align: center; color: var(--gray-500); padding: var(--space-8);">
+                    まだ履歴がありません。<br>サブスクを追加して分析を開始しましょう！
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // App State Management
+        class SubscriptionCalculator {
+            constructor() {
+                this.subscriptions = [];
+                this.history = this.loadHistory();
+                this.currentTheme = localStorage.getItem('theme') || 'light';
+                this.tutorialCompleted = localStorage.getItem('tutorialCompleted') === 'true';
+                
+                this.init();
             }
-            saveToHistory();
-        }
-        
-        function clearAll() {
-            subscriptions = [];
-            document.getElementById('results').style.display = 'none';
-            document.getElementById('clearBtn').style.display = 'none';
-            saveToHistory();
-        }
-        
-        function shareTwitter() {
-            const totalYearly = subscriptions.reduce((sum, sub) => sum + (sub.monthlyFee * 12), 0);
-            const highPriorityServices = subscriptions.filter(sub => sub.priority === 'high');
-            const savingsPotential = highPriorityServices.reduce((sum, sub) => sum + sub.yearlyFee, 0);
             
-            const text = `年間サブスク代: ¥${totalYearly.toLocaleString()}
+            init() {
+                this.setupEventListeners();
+                this.setupTheme();
+                this.updateHistoryDisplay();
+                
+                if (!this.tutorialCompleted) {
+                    setTimeout(() => this.showTutorial(), 1000);
+                }
+                
+                // Animate elements on load
+                this.animateElements();
+            }
+            
+            setupEventListeners() {
+                const form = document.getElementById('subscriptionForm');
+                form.addEventListener('submit', (e) => this.handleFormSubmit(e));
+                
+                // Real-time validation
+                document.getElementById('serviceName').addEventListener('input', (e) => this.validateField(e.target));
+                document.getElementById('monthlyFee').addEventListener('input', (e) => this.validateField(e.target));
+                document.getElementById('usageFreq').addEventListener('input', (e) => this.validateField(e.target));
+                
+                // Progress tracking
+                document.getElementById('serviceName').addEventListener('input', () => this.updateProgress());
+                document.getElementById('monthlyFee').addEventListener('input', () => this.updateProgress());
+                document.getElementById('usageFreq').addEventListener('input', () => this.updateProgress());
+            }
+            
+            setupTheme() {
+                document.documentElement.setAttribute('data-theme', this.currentTheme);
+                document.getElementById('themeIcon').textContent = this.currentTheme === 'dark' ? '☀️' : '🌙';
+            }
+            
+            validateField(field) {
+                const errorEl = document.getElementById(field.id + 'Error');
+                const successEl = document.getElementById(field.id + 'Success');
+                let isValid = false;
+                
+                switch(field.id) {
+                    case 'serviceName':
+                        isValid = field.value.trim().length >= 2;
+                        break;
+                    case 'monthlyFee':
+                        isValid = field.value > 0 && field.value <= 100000;
+                        if (!isValid && field.value > 100000) {
+                            errorEl.textContent = '❌ 金額が高すぎます（10万円以下で入力）';
+                        } else if (!isValid) {
+                            errorEl.textContent = '❌ 正しい金額を入力してください';
+                        }
+                        break;
+                    case 'usageFreq':
+                        isValid = field.value >= 0 && field.value <= 1000;
+                        if (!isValid && field.value > 1000) {
+                            errorEl.textContent = '❌ 利用回数が多すぎます';
+                        } else if (!isValid) {
+                            errorEl.textContent = '❌ 利用回数を入力してください';
+                        }
+                        break;
+                }
+                
+                if (isValid) {
+                    field.classList.remove('error');
+                    errorEl.style.display = 'none';
+                    successEl.style.display = 'flex';
+                } else {
+                    field.classList.add('error');
+                    errorEl.style.display = 'flex';
+                    successEl.style.display = 'none';
+                }
+                
+                return isValid;
+            }
+            
+            updateProgress() {
+                const fields = ['serviceName', 'monthlyFee', 'usageFreq'];
+                const completedFields = fields.filter(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    return this.validateField(field);
+                }).length;
+                
+                const progress = (completedFields / fields.length) * 100;
+                document.getElementById('progressFill').style.width = progress + '%';
+            }
+            
+            async handleFormSubmit(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('addBtn');
+                const btnText = document.getElementById('addBtnText');
+                const btnLoader = document.getElementById('addBtnLoader');
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                btnText.style.display = 'none';
+                btnLoader.style.display = 'inline-block';
+                
+                // Simulate API call delay for better UX
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                const formData = this.getFormData();
+                
+                if (this.validateFormData(formData)) {
+                    this.addSubscription(formData);
+                    this.clearForm();
+                    this.updateProgress();
+                    
+                    // Send analytics event
+                    this.sendAnalyticsEvent('subscription_added', {
+                        service_name: formData.serviceName,
+                        monthly_fee: formData.monthlyFee
+                    });
+                }
+                
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoader.style.display = 'none';
+            }
+            
+            getFormData() {
+                return {
+                    serviceName: document.getElementById('serviceName').value.trim(),
+                    monthlyFee: parseFloat(document.getElementById('monthlyFee').value),
+                    usageFreq: parseInt(document.getElementById('usageFreq').value),
+                    satisfaction: parseInt(document.getElementById('satisfaction').value)
+                };
+            }
+            
+            validateFormData(data) {
+                const fields = [
+                    { field: 'serviceName', element: document.getElementById('serviceName') },
+                    { field: 'monthlyFee', element: document.getElementById('monthlyFee') },
+                    { field: 'usageFreq', element: document.getElementById('usageFreq') }
+                ];
+                
+                let allValid = true;
+                fields.forEach(({ element }) => {
+                    if (!this.validateField(element)) {
+                        allValid = false;
+                    }
+                });
+                
+                // Check for duplicate service
+                const isDuplicate = this.subscriptions.some(sub => 
+                    sub.serviceName.toLowerCase() === data.serviceName.toLowerCase()
+                );
+                
+                if (isDuplicate) {
+                    this.showNotification('このサービスは既に追加されています', 'error');
+                    allValid = false;
+                }
+                
+                return allValid;
+            }
+            
+            addSubscription(data) {
+                const costPerUse = data.usageFreq > 0 ? data.monthlyFee / data.usageFreq : data.monthlyFee;
+                const priority = this.calculatePriority(data.monthlyFee, data.usageFreq, data.satisfaction);
+                
+                const subscription = {
+                    id: Date.now(),
+                    serviceName: data.serviceName,
+                    monthlyFee: data.monthlyFee,
+                    usageFreq: data.usageFreq,
+                    satisfaction: data.satisfaction,
+                    costPerUse,
+                    priority,
+                    yearlyFee: data.monthlyFee * 12,
+                    addedAt: new Date()
+                };
+                
+                this.subscriptions.push(subscription);
+                this.updateResults();
+                this.saveToHistory();
+                this.showNotification(`${data.serviceName} を追加しました！`, 'success');
+            }
+            
+            calculatePriority(monthlyFee, usageFreq, satisfaction) {
+                const costPerUse = usageFreq > 0 ? monthlyFee / usageFreq : monthlyFee;
+                const satisfactionWeight = (6 - satisfaction) / 5; // Lower satisfaction = higher weight
+                const usageWeight = usageFreq < 5 ? 1 : usageFreq < 15 ? 0.5 : 0.2;
+                
+                const score = (costPerUse * 0.4) + (monthlyFee * satisfactionWeight * 0.4) + (monthlyFee * usageWeight * 0.2);
+                
+                if (score > 1500) return 'high';
+                if (score > 800) return 'medium';
+                return 'low';
+            }
+            
+            updateResults() {
+                const totalMonthly = this.subscriptions.reduce((sum, sub) => sum + sub.monthlyFee, 0);
+                const totalYearly = totalMonthly * 12;
+                
+                const highPriorityServices = this.subscriptions.filter(sub => sub.priority === 'high');
+                const mediumPriorityServices = this.subscriptions.filter(sub => sub.priority === 'medium');
+                const savingsPotential = highPriorityServices.reduce((sum, sub) => sum + sub.yearlyFee, 0) + 
+                                      (mediumPriorityServices.reduce((sum, sub) => sum + sub.yearlyFee, 0) * 0.5);
+                
+                // Animate number changes
+                this.animateValue('totalMonthly', 0, totalMonthly, '¥');
+                this.animateValue('totalYearly', 0, totalYearly, '¥');
+                this.animateValue('savingsPotential', 0, savingsPotential, '¥');
+                
+                this.displaySubscriptions();
+                
+                const resultsSection = document.getElementById('resultsSection');
+                if (resultsSection.style.display === 'none') {
+                    resultsSection.style.display = 'block';
+                    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+            
+            animateValue(elementId, start, end, prefix = '') {
+                const element = document.getElementById(elementId);
+                const duration = 1000;
+                const startTime = performance.now();
+                
+                const animate = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Easing function
+                    const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+                    const current = start + (end - start) * easeOutCubic;
+                    
+                    element.textContent = prefix + Math.round(current).toLocaleString();
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    }
+                };
+                
+                requestAnimationFrame(animate);
+            }
+            
+            displaySubscriptions() {
+                const sortedSubs = [...this.subscriptions].sort((a, b) => {
+                    const priorityOrder = { high: 3, medium: 2, low: 1 };
+                    if (priorityOrder[b.priority] !== priorityOrder[a.priority]) {
+                        return priorityOrder[b.priority] - priorityOrder[a.priority];
+                    }
+                    return b.monthlyFee - a.monthlyFee;
+                });
+                
+                const listHTML = sortedSubs.map(sub => this.createSubscriptionItemHTML(sub)).join('');
+                document.getElementById('subscriptionList').innerHTML = listHTML;
+                
+                // Animate new items
+                setTimeout(() => {
+                    document.querySelectorAll('.subscription-item').forEach((item, index) => {
+                        item.style.animationDelay = `${index * 0.1}s`;
+                        item.classList.add('fade-in');
+                    });
+                }, 100);
+            }
+            
+            createSubscriptionItemHTML(sub) {
+                const priorityText = {
+                    high: '解約推奨',
+                    medium: '要検討',
+                    low: '継続推奨'
+                };
+                
+                const priorityIcon = {
+                    high: '🚨',
+                    medium: '⚠️',
+                    low: '✅'
+                };
+                
+                return `
+                    <div class="subscription-item priority-${sub.priority}" data-id="${sub.id}">
+                        <div class="subscription-header">
+                            <div>
+                                <div class="subscription-name">${sub.serviceName}</div>
+                                <div class="priority-badge ${sub.priority}">
+                                    ${priorityIcon[sub.priority]} ${priorityText[sub.priority]}
+                                </div>
+                            </div>
+                            <button class="btn btn-danger" onclick="app.removeSubscription(${sub.id})" style="padding: 8px 16px; font-size: 0.875rem;">
+                                🗑️ 削除
+                            </button>
+                        </div>
+                        
+                        <div class="subscription-meta">
+                            <div class="meta-item">
+                                <div class="meta-label">月額料金</div>
+                                <div class="meta-value">¥${sub.monthlyFee.toLocaleString()}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">月間利用回数</div>
+                                <div class="meta-value">${sub.usageFreq}回</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">1回あたり</div>
+                                <div class="meta-value">¥${Math.round(sub.costPerUse).toLocaleString()}</div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-label">満足度</div>
+                                <div class="meta-value">${'⭐'.repeat(sub.satisfaction)}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            removeSubscription(id) {
+                const subscription = this.subscriptions.find(sub => sub.id === id);
+                if (!subscription) return;
+                
+                // Animate removal
+                const element = document.querySelector(`[data-id="${id}"]`);
+                element.style.transform = 'translateX(100%)';
+                element.style.opacity = '0';
+                
+                setTimeout(() => {
+                    this.subscriptions = this.subscriptions.filter(sub => sub.id !== id);
+                    
+                    if (this.subscriptions.length === 0) {
+                        document.getElementById('resultsSection').style.display = 'none';
+                    } else {
+                        this.updateResults();
+                    }
+                    
+                    this.saveToHistory();
+                    this.showNotification(`${subscription.serviceName} を削除しました`, 'info');
+                }, 300);
+            }
+            
+            clearAll() {
+                if (this.subscriptions.length === 0) return;
+                
+                if (confirm('全てのサブスクリプションデータを削除しますか？')) {
+                    this.subscriptions = [];
+                    document.getElementById('resultsSection').style.display = 'none';
+                    this.saveToHistory();
+                    this.showNotification('全データを削除しました', 'info');
+                }
+            }
+            
+            clearForm() {
+                document.getElementById('subscriptionForm').reset();
+                document.getElementById('satisfaction').value = '3';
+                
+                // Clear validation states
+                ['serviceName', 'monthlyFee', 'usageFreq'].forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    const errorEl = document.getElementById(fieldId + 'Error');
+                    const successEl = document.getElementById(fieldId + 'Success');
+                    
+                    field.classList.remove('error');
+                    errorEl.style.display = 'none';
+                    successEl.style.display = 'none';
+                });
+            }
+            
+            // Share Functions
+            shareTwitter() {
+                const totalYearly = this.subscriptions.reduce((sum, sub) => sum + sub.yearlyFee, 0);
+                const highPriorityServices = this.subscriptions.filter(sub => sub.priority === 'high');
+                const savingsPotential = highPriorityServices.reduce((sum, sub) => sum + sub.yearlyFee, 0);
+                
+                const text = `年間サブスク代: ¥${totalYearly.toLocaleString()}
 節約可能額: ¥${savingsPotential.toLocaleString()}
 
 サブスク断捨離で家計を見直そう！
 #継続は力なり #サブスク断捨離 #節約 #家計管理`;
+                
+                const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+                window.open(url, '_blank');
+                this.sendAnalyticsEvent('share_twitter');
+            }
             
-            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
-            window.open(url, '_blank');
-        }
-        
-        function shareLine() {
-            const totalYearly = subscriptions.reduce((sum, sub) => sum + (sub.monthlyFee * 12), 0);
-            const text = `年間サブスク代: ¥${totalYearly.toLocaleString()}でした！
+            shareLine() {
+                const totalYearly = this.subscriptions.reduce((sum, sub) => sum + sub.yearlyFee, 0);
+                const text = `年間サブスク代: ¥${totalYearly.toLocaleString()}でした！
 サブスク断捨離計算機で家計を見直してみよう`;
-            const url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
-        }
-        
-        function compareWithFriends() {
-            const totalYearly = subscriptions.reduce((sum, sub) => sum + (sub.monthlyFee * 12), 0);
-            const compareText = `私の年間サブスク代は¥${totalYearly.toLocaleString()}でした！
+                const url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(text)}`;
+                window.open(url, '_blank');
+                this.sendAnalyticsEvent('share_line');
+            }
+            
+            shareFacebook() {
+                const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+                window.open(url, '_blank');
+                this.sendAnalyticsEvent('share_facebook');
+            }
+            
+            compareWithFriends() {
+                const totalYearly = this.subscriptions.reduce((sum, sub) => sum + sub.yearlyFee, 0);
+                const compareText = `私の年間サブスク代は¥${totalYearly.toLocaleString()}でした！
 あなたはどのくらい？一緒に計算してみよう！
 
 ${window.location.href}`;
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: 'サブスク断捨離計算機',
-                    text: compareText,
-                    url: window.location.href
-                });
-            } else {
-                navigator.clipboard.writeText(compareText).then(() => {
-                    alert('比較用テキストをクリップボードにコピーしました！');
-                });
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'サブスク断捨離計算機',
+                        text: compareText,
+                        url: window.location.href
+                    });
+                } else {
+                    navigator.clipboard.writeText(compareText).then(() => {
+                        this.showNotification('比較用テキストをクリップボードにコピーしました！', 'success');
+                    });
+                }
+                this.sendAnalyticsEvent('compare_friends');
             }
-        }
-        
-        function saveToHistory() {
-            const now = new Date();
-            const totalMonthly = subscriptions.reduce((sum, sub) => sum + sub.monthlyFee, 0);
-            const totalYearly = totalMonthly * 12;
             
-            if (totalYearly > 0) {
-                history.unshift({
-                    date: now.toLocaleDateString('ja-JP'),
-                    totalYearly,
-                    subscriptionCount: subscriptions.length
+            // History Management
+            saveToHistory() {
+                const now = new Date();
+                const totalMonthly = this.subscriptions.reduce((sum, sub) => sum + sub.monthlyFee, 0);
+                const totalYearly = totalMonthly * 12;
+                
+                if (totalYearly > 0) {
+                    this.history.unshift({
+                        date: now.toLocaleDateString('ja-JP'),
+                        totalYearly,
+                        subscriptionCount: this.subscriptions.length,
+                        timestamp: now.getTime()
+                    });
+                    
+                    // Keep only latest 15 records
+                    this.history = this.history.slice(0, 15);
+                }
+                
+                localStorage.setItem('subscriptionHistory', JSON.stringify(this.history));
+                this.updateHistoryDisplay();
+            }
+            
+            loadHistory() {
+                try {
+                    return JSON.parse(localStorage.getItem('subscriptionHistory') || '[]');
+                } catch (e) {
+                    return [];
+                }
+            }
+            
+            updateHistoryDisplay() {
+                const historyList = document.getElementById('historyList');
+                
+                if (this.history.length === 0) {
+                    historyList.innerHTML = `
+                        <p style="text-align: center; color: var(--gray-500); padding: var(--space-8);">
+                            まだ履歴がありません。<br>サブスクを追加して分析を開始しましょう！
+                        </p>
+                    `;
+                    return;
+                }
+                
+                const historyHTML = this.history.map((record, index) => `
+                    <div class="history-item" style="animation-delay: ${index * 0.1}s;">
+                        <div>
+                            <div class="history-date">${record.date}</div>
+                            <div class="history-data">サービス数: ${record.subscriptionCount}個</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-600);">¥${record.totalYearly.toLocaleString()}</div>
+                            <div class="history-data">年間合計</div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                historyList.innerHTML = historyHTML;
+            }
+            
+            // Theme Management
+            toggleTheme() {
+                this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+                this.setupTheme();
+                localStorage.setItem('theme', this.currentTheme);
+                this.sendAnalyticsEvent('theme_toggle', { theme: this.currentTheme });
+            }
+            
+            // Tutorial System
+            showTutorial() {
+                document.getElementById('tutorialOverlay').classList.add('active');
+                this.sendAnalyticsEvent('tutorial_shown');
+            }
+            
+            closeTutorial() {
+                document.getElementById('tutorialOverlay').classList.remove('active');
+                localStorage.setItem('tutorialCompleted', 'true');
+                this.tutorialCompleted = true;
+                this.sendAnalyticsEvent('tutorial_skipped');
+            }
+            
+            startTutorial() {
+                this.closeTutorial();
+                document.getElementById('serviceName').focus();
+                this.showNotification('まずはサービス名を入力してみましょう！', 'info');
+                this.sendAnalyticsEvent('tutorial_started');
+            }
+            
+            // Notification System
+            showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 3000;
+                    padding: 16px 24px;
+                    border-radius: 12px;
+                    color: white;
+                    font-weight: 600;
+                    backdrop-filter: blur(10px);
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                    transform: translateX(100%);
+                    transition: all 0.3s ease;
+                    max-width: 300px;
+                `;
+                
+                const colors = {
+                    success: 'background: rgba(16, 185, 129, 0.9); border: 1px solid rgba(16, 185, 129, 0.3);',
+                    error: 'background: rgba(239, 68, 68, 0.9); border: 1px solid rgba(239, 68, 68, 0.3);',
+                    info: 'background: rgba(14, 165, 233, 0.9); border: 1px solid rgba(14, 165, 233, 0.3);'
+                };
+                
+                notification.style.cssText += colors[type];
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+                setTimeout(() => notification.style.transform = 'translateX(100%)', 3000);
+                setTimeout(() => document.body.removeChild(notification), 3500);
+            }
+            
+            // Analytics
+            sendAnalyticsEvent(action, data = {}) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', action, {
+                        event_category: 'Subscription Calculator',
+                        event_label: action,
+                        ...data
+                    });
+                }
+                
+                // Also send to console for debugging
+                console.log('Analytics Event:', action, data);
+            }
+            
+            // Animation Utils
+            animateElements() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-in');
+                        }
+                    });
                 });
                 
-                // 最新10件のみ保持
-                history = history.slice(0, 10);
-                localStorage.setItem('subscriptionHistory', JSON.stringify(history));
-            }
-            
-            updateHistoryDisplay();
-        }
-        
-        function updateHistoryDisplay() {
-            const historyList = document.getElementById('historyList');
-            
-            if (history.length === 0) {
-                historyList.innerHTML = '<p>まだ履歴がありません。サブスクを追加して分析を開始しましょう！</p>';
-                return;
-            }
-            
-            const historyHTML = history.map(record => `
-                <div class="subscription-item">
-                    <div>
-                        <strong>${record.date}</strong><br>
-                        年間合計: ¥${record.totalYearly.toLocaleString()} | 
-                        サービス数: ${record.subscriptionCount}個
-                    </div>
-                </div>
-            `).join('');
-            
-            historyList.innerHTML = historyHTML;
-        }
-        
-        // ページ読み込み時に履歴を表示
-        updateHistoryDisplay();
-        
-        // Google Analytics イベント送信
-        function sendAnalyticsEvent(action, category = 'Subscription Calculator') {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', action, {
-                    event_category: category,
-                    event_label: action
+                document.querySelectorAll('.card, .ad-card').forEach(el => {
+                    observer.observe(el);
                 });
             }
         }
         
-        // イベント追加
-        document.getElementById('serviceName').addEventListener('input', () => {
-            sendAnalyticsEvent('service_name_input');
+        // Global Functions (for onclick handlers)
+        let app;
+        
+        window.toggleTheme = () => app.toggleTheme();
+        window.closeTutorial = () => app.closeTutorial();
+        window.startTutorial = () => app.startTutorial();
+        window.shareTwitter = () => app.shareTwitter();
+        window.shareLine = () => app.shareLine();
+        window.shareFacebook = () => app.shareFacebook();
+        window.compareWithFriends = () => app.compareWithFriends();
+        window.clearAll = () => app.clearAll();
+        window.sendAnalyticsEvent = (action, data) => app.sendAnalyticsEvent(action, data);
+        
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            app = new SubscriptionCalculator();
+        });
+        
+        // PWA Support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+        
+        // Performance Monitoring
+        window.addEventListener('load', () => {
+            const perfData = performance.timing;
+            const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+            app?.sendAnalyticsEvent('page_load_time', { load_time: loadTime });
         });
     </script>
 </body>
