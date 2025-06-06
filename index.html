@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サブスク断捨離計算機 - 無料で年間6万円節約</title>
+    <meta name="description" content="サブスク代を可視化して無駄を発見。使用頻度から解約すべきサービスを分析し、年間最大6万円の節約を実現。">
+    <meta name="keywords" content="サブスク,断捨離,節約,家計簿,計算機,解約">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKnSURBVFhH7ZZNaxNBGIafBBu0RbEq9eBFD548ePCgJ1s9ePHgQQ8e9OBBvXjQg54E9eDFgydPnjx4suLJkydPnjx48uTJk6dOnjx58uTJk6c+/QMyb2YzmW2SJmnBBx5mdmdndp7Zd2Y2CYLgPxAEQRAEQRAEQRAEQRAEQfwPRqORAq7rqkajkUokEkqhUFA6nQ5CodAzjuO+xWIxpVKpKJVKRalUKkqlUlEqlYpSqVSUSqWiVCoVpVKpKJVKRalUKkqlUlEqlYpSqVRUu92O6/U6VavVVKVSUeVyWZXL5SS/T09PLxeLxc9er5e+7OzsnOz3+93t7e3fW1tbvzY3N39tb2//3tnZ+b21tfVrd3f39/7+/m/f93/7vv/b8/3fru//8jz/l+f5vzw/+OV5wU/PC356fvDT84OfnhfMet5g1vOCGc8PZjw/mPa8YMrzg0nPC8Y9L3jjusFr1w3GXDcYc93glesGI64bjLhO8NJ1gxeuE7xwHeGF6wgvHEd47jjCc8cRnjuO8MxxhKe2Izx1HeGJ4whPbEd4bDvCY9sRHtmO8Mh2hEe2Izy0HeGh7QgPbEd4YDvCA9sR7tuOcN92hHu2I9yzHeGu7Qh3bUe4YzvCHdsRbtuOcNt2hFu2I9yyHeGm7Qg3bUe4YTvCDdsRrtuOcN12hGu2I1yzHeGq7QhXbUe4YjvCFdsRLtuOcNl2hEu2I1yyHeGi7QgXbUe4YDvCBdsRztuOcN52hHO2I5yzHeGs7QhnbUc4YzvCGdsRTtuOcNp2hFO2I5yyHeGk7QgnbUc4YTvCCdsRjtuOcNx2hGO2Ixy1HeGI7QhHbEc4bDvCYdsRDtmOcNB2hIO2IxywHeGA7Qj7bUfYbzvCPtsR9tmOsNd2hL22I+y1HWGv7Qh7bUfYYzvCHtsRdtuOsNt2hF22I+yyHWGn7Qg7bUfYYTvCDtsRttuOsN12hG22I2yzHWGr7QhbbUfYYjvCFtsRNtuOsNl2hE22I2yyHWGj7QgbbUfYYDvCBtsR1tuOsN52hHW2I6yzHWGt7QhrbUdYYzvCGtsRVtuOsNp2hFW2I6yyHWGl7QgrbUdYYTvCctsRltuOsMx2hKW2Iyy1HWGx7QiLbUdYZDvCItsRFtqOsNB2hAW2IyywHWG+7QjzbUeYZzvCPNsR5tqOsMA0TdM0TdM0TdM0TdM0TdM0TdPstf8C/a7sXgAAAABJRU5ErkJggg==">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .calc-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .ad-section {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .subscription-form {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+        }
+        
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+        }
+        
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .summary-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .subscription-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .priority-high {
+            border-left-color: #dc3545;
+        }
+        
+        .priority-medium {
+            border-left-color: #ffc107;
+        }
+        
+        .priority-low {
+            border-left-color: #28a745;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .share-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .share-twitter {
+            background: #1da1f2;
+        }
+        
+        .share-line {
+            background: #00c300;
+        }
+        
+        .share-facebook {
+            background: #1877f2;
+        }
+        
+        .history {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .affiliate-note {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container">
+        <div class="header">
+            <h1>💰 サブスク断捨離計算機</h1>
+            <p>年間6万円の節約も可能！あなたのサブスク代を見直そう</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="calc-section">
+                <h2>📱 契約中のサブスクを入力</h2>
+                
+                <div class="subscription-form">
+                    <div class="input-group">
+                        <label for="serviceName">サービス名</label>
+                        <input type="text" id="serviceName" placeholder="例: Netflix, Spotify">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="monthlyFee">月額料金（円）</label>
+                        <input type="number" id="monthlyFee" placeholder="例: 1,980">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="usageFreq">月の利用回数</label>
+                        <input type="number" id="usageFreq" placeholder="例: 15">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="satisfaction">満足度（1-5）</label>
+                        <select id="satisfaction">
+                            <option value="1">1 - 全く満足していない</option>
+                            <option value="2">2 - あまり満足していない</option>
+                            <option value="3" selected>3 - 普通</option>
+                            <option value="4">4 - 満足している</option>
+                            <option value="5">5 - 非常に満足している</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn" onclick="addSubscription()">サブスクを追加</button>
+                </div>
+                
+                <div id="results" class="results" style="display: none;">
+                    <div class="summary-card">
+                        <h3>📊 分析結果</h3>
+                        <div>月額合計: <span id="totalMonthly" class="summary-amount">¥0</span></div>
+                        <div>年額合計: <span id="totalYearly" class="summary-amount">¥0</span></div>
+                        <div>節約可能額: <span id="savingsPotential" class="summary-amount">¥0</span></div>
+                    </div>
+                    
+                    <div id="subscriptionList"></div>
+                    
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn share-twitter" onclick="shareTwitter()">Xでシェア</a>
+                        <a href="#" class="share-btn share-line" onclick="shareLine()">LINEでシェア</a>
+                        <button class="btn btn-secondary" onclick="compareWithFriends()">友達と比較</button>
+                    </div>
+                </div>
+                
+                <button class="btn btn-danger" onclick="clearAll()" style="display: none;" id="clearBtn">全てクリア</button>
+            </div>
+            
+            <div class="sidebar">
+                <!-- A8.net アフィリエイト -->
+                <div class="ad-section">
+                    <h3>💡 おすすめ節約サービス</h3>
+                    <p><strong>マネーフォワード ME</strong></p>
+                    <p>家計簿アプリで支出を自動分析！サブスク管理も簡単に。</p>
+                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 10px;">詳細を見る</a>
+                    <div class="affiliate-note">※アフィリエイト広告</div>
+                </div>
+                
+                <!-- Amazon アソシエイト -->
+                <div class="ad-section">
+                    <h3>📚 節約本のおすすめ</h3>
+                    <p><strong>お金の大学</strong></p>
+                    <p>両学長が教える「貯める・稼ぐ・増やす・守る・使う」の実践方法</p>
+                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 10px;">Amazonで見る</a>
+                    <div class="affiliate-note">※Amazon アソシエイト</div>
+                </div>
+                
+                <!-- 楽天アフィリエイト -->
+                <div class="ad-section">
+                    <h3>🏪 楽天経済圏で節約</h3>
+                    <p><strong>楽天カード</strong></p>
+                    <p>年会費無料でポイント還元率1%！楽天市場でのお買い物がお得に。</p>
+                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 10px;">楽天で申し込み</a>
+                    <div class="affiliate-note">※楽天アフィリエイト</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history">
+            <h3>📈 計算履歴</h3>
+            <div id="historyList">
+                <p>まだ履歴がありません。サブスクを追加して分析を開始しましょう！</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let subscriptions = [];
+        let history = JSON.parse(localStorage.getItem('subscriptionHistory') || '[]');
+        
+        function addSubscription() {
+            const serviceName = document.getElementById('serviceName').value;
+            const monthlyFee = parseFloat(document.getElementById('monthlyFee').value);
+            const usageFreq = parseInt(document.getElementById('usageFreq').value);
+            const satisfaction = parseInt(document.getElementById('satisfaction').value);
+            
+            if (!serviceName || !monthlyFee || !usageFreq) {
+                alert('全ての項目を入力してください');
+                return;
+            }
+            
+            const costPerUse = monthlyFee / usageFreq;
+            const priority = calculatePriority(monthlyFee, usageFreq, satisfaction);
+            
+            subscriptions.push({
+                serviceName,
+                monthlyFee,
+                usageFreq,
+                satisfaction,
+                costPerUse,
+                priority,
+                yearlyFee: monthlyFee * 12
+            });
+            
+            // フォームクリア
+            document.getElementById('serviceName').value = '';
+            document.getElementById('monthlyFee').value = '';
+            document.getElementById('usageFreq').value = '';
+            document.getElementById('satisfaction').value = '3';
+            
+            updateResults();
+            saveToHistory();
+        }
+        
+        function calculatePriority(monthlyFee, usageFreq, satisfaction) {
+            const costPerUse = monthlyFee / usageFreq;
+            const score = (costPerUse * 0.4) + ((6 - satisfaction) * monthlyFee * 0.3) + (monthlyFee * 0.3);
+            
+            if (score > 2000) return 'high';
+            if (score > 1000) return 'medium';
+            return 'low';
+        }
+        
+        function updateResults() {
+            const totalMonthly = subscriptions.reduce((sum, sub) => sum + sub.monthlyFee, 0);
+            const totalYearly = totalMonthly * 12;
+            
+            // 解約優先度の高いサービスの節約可能額を計算
+            const highPriorityServices = subscriptions.filter(sub => sub.priority === 'high');
+            const savingsPotential = highPriorityServices.reduce((sum, sub) => sum + sub.yearlyFee, 0);
+            
+            document.getElementById('totalMonthly').textContent = `¥${totalMonthly.toLocaleString()}`;
+            document.getElementById('totalYearly').textContent = `¥${totalYearly.toLocaleString()}`;
+            document.getElementById('savingsPotential').textContent = `¥${savingsPotential.toLocaleString()}`;
+            
+            displaySubscriptions();
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('clearBtn').style.display = 'block';
+        }
+        
+        function displaySubscriptions() {
+            const sortedSubs = [...subscriptions].sort((a, b) => {
+                const priorityOrder = { high: 3, medium: 2, low: 1 };
+                return priorityOrder[b.priority] - priorityOrder[a.priority];
+            });
+            
+            const listHTML = sortedSubs.map(sub => `
+                <div class="subscription-item priority-${sub.priority}">
+                    <div>
+                        <strong>${sub.serviceName}</strong><br>
+                        月額: ¥${sub.monthlyFee.toLocaleString()} | 
+                        利用回数: ${sub.usageFreq}回 | 
+                        1回あたり: ¥${Math.round(sub.costPerUse)}<br>
+                        <small>満足度: ${sub.satisfaction}/5 | 
+                        解約優先度: ${sub.priority === 'high' ? '高' : sub.priority === 'medium' ? '中' : '低'}</small>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;" 
+                                onclick="removeSubscription('${sub.serviceName}')">削除</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('subscriptionList').innerHTML = listHTML;
+        }
+        
+        function removeSubscription(serviceName) {
+            subscriptions = subscriptions.filter(sub => sub.serviceName !== serviceName);
+            if (subscriptions.length === 0) {
+                document.getElementById('results').style.display = 'none';
+                document.getElementById('clearBtn').style.display = 'none';
+            } else {
+                updateResults();
+            }
+            saveToHistory();
+        }
+        
+        function clearAll() {
+            subscriptions = [];
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('clearBtn').style.display = 'none';
+            saveToHistory();
+        }
+        
+        function shareTwitter() {
+            const totalYearly = subscriptions.reduce((sum, sub) => sum + (sub.monthlyFee * 12), 0);
+            const highPriorityServices = subscriptions.filter(sub => sub.priority === 'high');
+            const savingsPotential = highPriorityServices.reduce((sum, sub) => sum + sub.yearlyFee, 0);
+            
+            const text = `年間サブスク代: ¥${totalYearly.toLocaleString()}
+節約可能額: ¥${savingsPotential.toLocaleString()}
+
+サブスク断捨離で家計を見直そう！
+#継続は力なり #サブスク断捨離 #節約 #家計管理`;
+            
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank');
+        }
+        
+        function shareLine() {
+            const totalYearly = subscriptions.reduce((sum, sub) => sum + (sub.monthlyFee * 12), 0);
+            const text = `年間サブスク代: ¥${totalYearly.toLocaleString()}でした！
+サブスク断捨離計算機で家計を見直してみよう`;
+            const url = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+        }
+        
+        function compareWithFriends() {
+            const totalYearly = subscriptions.reduce((sum, sub) => sum + (sub.monthlyFee * 12), 0);
+            const compareText = `私の年間サブスク代は¥${totalYearly.toLocaleString()}でした！
+あなたはどのくらい？一緒に計算してみよう！
+
+${window.location.href}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'サブスク断捨離計算機',
+                    text: compareText,
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(compareText).then(() => {
+                    alert('比較用テキストをクリップボードにコピーしました！');
+                });
+            }
+        }
+        
+        function saveToHistory() {
+            const now = new Date();
+            const totalMonthly = subscriptions.reduce((sum, sub) => sum + sub.monthlyFee, 0);
+            const totalYearly = totalMonthly * 12;
+            
+            if (totalYearly > 0) {
+                history.unshift({
+                    date: now.toLocaleDateString('ja-JP'),
+                    totalYearly,
+                    subscriptionCount: subscriptions.length
+                });
+                
+                // 最新10件のみ保持
+                history = history.slice(0, 10);
+                localStorage.setItem('subscriptionHistory', JSON.stringify(history));
+            }
+            
+            updateHistoryDisplay();
+        }
+        
+        function updateHistoryDisplay() {
+            const historyList = document.getElementById('historyList');
+            
+            if (history.length === 0) {
+                historyList.innerHTML = '<p>まだ履歴がありません。サブスクを追加して分析を開始しましょう！</p>';
+                return;
+            }
+            
+            const historyHTML = history.map(record => `
+                <div class="subscription-item">
+                    <div>
+                        <strong>${record.date}</strong><br>
+                        年間合計: ¥${record.totalYearly.toLocaleString()} | 
+                        サービス数: ${record.subscriptionCount}個
+                    </div>
+                </div>
+            `).join('');
+            
+            historyList.innerHTML = historyHTML;
+        }
+        
+        // ページ読み込み時に履歴を表示
+        updateHistoryDisplay();
+        
+        // Google Analytics イベント送信
+        function sendAnalyticsEvent(action, category = 'Subscription Calculator') {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    event_category: category,
+                    event_label: action
+                });
+            }
+        }
+        
+        // イベント追加
+        document.getElementById('serviceName').addEventListener('input', () => {
+            sendAnalyticsEvent('service_name_input');
+        });
+    </script>
+</body>
+</html>

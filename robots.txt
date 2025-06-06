@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://appadaycreator.github.io/subscription-calculator/sitemap.xml
+
+# 高頻度でのクロールを制限（サーバー負荷軽減）
+Crawl-delay: 1
